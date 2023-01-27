@@ -12,7 +12,7 @@ BASE_DIR = Path(__file__).resolve(strict=True).parent
 TODAY = datetime.date.today()
 
 
-def train(ticker="MSFT"):
+def train(ticker="AAPL"):
     data = yf.download(ticker, "2020-01-01", TODAY.strftime("%Y-%m-%d"))
 
     df_forecast = data.copy()
@@ -47,8 +47,8 @@ def predict(ticker="MSFT", days=7):
 
     forecast = model.predict(df)
 
-    model.plot(forecast).savefig(f"{ticker}_plot.png")
-    model.plot_components(forecast).savefig(f"{ticker}_plot_components.png")
+    # model.plot(forecast).savefig(f"{ticker}_plot.png")
+    # model.plot_components(forecast).savefig(f"{ticker}_plot_components.png")
 
     return forecast.tail(days).to_dict("records")
 
