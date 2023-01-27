@@ -1,10 +1,13 @@
+import sys
+sys.path.append("/opt/anaconda3/envs/stock-predictor/lib/python3.8/site-packages")
 import datetime
 from pathlib import Path
 
 import joblib
 import pandas as pd
-import yfinance as yf
+
 from prophet import Prophet
+import yfinance as yf
 
 import argparse
 
